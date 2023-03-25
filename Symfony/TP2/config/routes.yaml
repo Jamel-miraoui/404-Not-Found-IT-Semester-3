@@ -1,3 +1,19 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+inscri_accueil:
+ path : /inscri/
+ controller: App\Controller\InscriController::index
+
+inscri_voir:
+ path : /inscri/voir/{id}
+ controller: App\Controller\InscriController::voir
+ 
+inscri_ajouter:
+ path : /inscri/ajouter/
+ controller: App\Controller\InscriController::ajouter
+
+inscri_supprimer:
+ path : /inscri/supprimer/{id}
+ controller: App\Controller\InscriController::supprimer
