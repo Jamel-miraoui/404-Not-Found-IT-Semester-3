@@ -5,7 +5,7 @@ public class Livre {
 	private double prix;
 	private String auteur,titre;
 
-	Livre (numLivre,titre,auteur,prix){
+	public Livre (int numLivre,double prix,String auteur,String titre){
 		this.numLivre=numLivre;
 		this.titre=titre;
 		this.auteur=auteur;
