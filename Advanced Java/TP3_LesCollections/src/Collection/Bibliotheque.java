@@ -6,10 +6,9 @@ public class Bibliotheque  {
 	private String nomBib; 
 	private static ArrayList<Livre> table; 
 	
-	public Bibliotheque() {
+	public Bibliotheque(String nomBib) {
 		this.nomBib = nomBib;
-        this.table = new ArrayList<>();
-	}&s
+        this.table = new ArrayList<>();}
 	
 	public void ajouterLivre(Livre livre) {
 		table.add(livre);
@@ -43,6 +42,11 @@ public class Bibliotheque  {
 		}
 	
 	public String toString() {
-		
+		String livres = "";
+        for (Livre livre : table) {
+            livres += livre.toString() + "\n";
+        }
+        return "Bibliothèque " + nomBib + " (" + table.size() + " livres disponibles)\n"
+                + livres;
 	}
 }
