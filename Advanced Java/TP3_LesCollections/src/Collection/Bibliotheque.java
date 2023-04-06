@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Bibliotheque  {
 	private String nomBib; 
-	private static ArrayList<Livre> table; 
+	private ArrayList<Livre> table; 
 	
 	public Bibliotheque(String nomBib) {
 		this.nomBib = nomBib;
