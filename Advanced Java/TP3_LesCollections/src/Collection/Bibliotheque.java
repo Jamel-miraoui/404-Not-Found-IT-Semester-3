@@ -14,10 +14,11 @@ public class Bibliotheque  {
 		table.add(livre);
 	}
 	
-	public String rechercheLivre(int numLivre) {
+	public String rechercheLivre(int numLivre) { 
 		for (Livre livre : table) {
+			int i = 0 ; 
             if (livre.getNumLivre() == numLivre) {
-                return table.toString();
+                return livre.toString();
             }
         }
         return "Livre inexistant";
