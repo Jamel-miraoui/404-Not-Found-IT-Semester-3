@@ -8,9 +8,6 @@ public class CollectionPays {
 		// TODO Auto-generated method stub*
 		int answer; 
 		ArrayList<String> collPays = new ArrayList<String>();
-		collPays.add("Tunisia");
-		collPays.add("France");
-		collPays.add("Algeria");
 		do {
 			try {
 				answer = Integer.parseInt(JOptionPane.showInputDialog("Menu General \n 1.Ajouter un pays \n 2.Supprimer un pays \n 3.Vider la liste \n 4.Trier la liste \n 5.Consulter la liste \n 6.Quitter \n \n Enter votre choix (1..6)"));
@@ -23,11 +20,29 @@ public class CollectionPays {
 				String answer1 = JOptionPane.showInputDialog("Ajouter un pays");
 				if (collPays.contains(answer1)) {JOptionPane.showMessageDialog(null,"pays déjà existant");}
 				else {collPays.add(answer1); JOptionPane.showMessageDialog(null,"l’opération est bien déroulée");}
+				break;
+				
 			case 2:
 				String answer2 = JOptionPane.showInputDialog("Supprimer un pays");
 				if (collPays.remove(answer2)) {;JOptionPane.showMessageDialog(null,"l’opération est bien déroulée");}
 				else {JOptionPane.showMessageDialog(null,"Error pays inexistant,");}
+				break;
+				
+			case 3:
+				collPays.clear();
+				JOptionPane.showMessageDialog(null,"l’opération est bien déroulée");
+				break;
+				
+			case 4: 
+				collPays.sort(null);
+				JOptionPane.showMessageDialog(null,"l’opération est bien déroulée");
+				break;
+				
+			case 5: 
+				JOptionPane.showMessageDialog(null,collPays.toString());
+				break;
 			}
+			
 		} while (answer != 6);
 	}
 }
