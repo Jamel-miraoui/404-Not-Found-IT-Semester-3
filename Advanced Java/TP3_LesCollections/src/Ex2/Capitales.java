@@ -30,10 +30,17 @@ public class Capitales {
 				
 			case 2:
 				String answer2 = JOptionPane.showInputDialog("Recherche une capitale");
-				
+				if (collPays.containsKey(answer2)) {JOptionPane.showMessageDialog(null,collPays.get(answer2));}
+				else {JOptionPane.showMessageDialog(null,"Error pays inexistant");}
 				break;
 				
 			case 3:
+				String answer3 = JOptionPane.showInputDialog("Supprimer une entrée");
+				if (collPays.containsKey(answer3)) {
+                    collPays.remove(answer3);
+                    JOptionPane.showMessageDialog(null,"l’opération est bien déroulée");
+                    }
+				else {JOptionPane.showMessageDialog(null,"Error pays inexistant");}
 				break;
 				
 			case 4: 
@@ -42,7 +49,10 @@ public class Capitales {
 				break;
 				
 			case 5: 
-				JOptionPane.showMessageDialog(null,collPays.toString());
+				if (collPays.isEmpty()) {JOptionPane.showMessageDialog(null,"collPays est vide");}
+				else {for (String answer5 : collPays.keySet()) {
+					JOptionPane.showMessageDialog(null,answer5 + " ( " + collPays.get(answer5)+") \n");
+                }}
 				break;
 			}
 			
