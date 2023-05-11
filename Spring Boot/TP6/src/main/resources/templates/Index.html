@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="comman/header  :: header"/>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+ <div th:replace="comman/header :: navbar"/>
+<h2 >Gestion Etudiant</h2>
+
+    <div align = "left" >
+  <h3><a  th:href="@{'/Etudiant/ajouteretudiant'}">Ajouter Nouveau</a></h3>    
+    </div>
+
+ 
+    <div class="col-sm-8" align = "center">
+    <div class="panel-body" align = "center" >
+          
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+           <th>Etudiant ID</th>
+            <th>Nom Etudiant</th>
+            <th>Cours</th>
+             <th>Modifier</th>
+             <th>Supprimer</th>
+   </tr>
+  </thead>
+ 
+ <tr  th:each="etudiant : ${listetudiant}">
+<td th:text="${etudiant.id}">Etudiant ID</td>
+<td th:text="${etudiant.nometd}">Nom Etudiant</td>
+<td th:text="${etudiant.nomcours}">Cours</td>
+<td>
+<a th:href="@{'/Etudiant/modif/' + ${etudiant.id}}">Modifier</a>
+</td>     
+<td>
+<a th:href="@{'/Etudiant/supprime/' + ${etudiant.id}}">Supprimer</a>
+</td>     
+     </tr>
+
+</table>
+</div>
+</div>
+     
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Gestion des etudiants</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div align="center">
+    <h1>Ajouter nouveau etudiant</h1>
+    <br />
+     <div class="col-sm-4">
+    <form action="#" th:action="@{/Etudiant/enregistre}" th:object="${etudiant}" method="post">
+ 
+      
+<div align="left">
+            <tr>
+                <label class="form-label" >Nom etudiant</label>
+                <td>
+                <input type="hidden" th:field="*{id}" />
+                <input type="text" th:field="*{nometd}" class="form-control" placeholder="Student Name" />
+                </td>
+            </tr>
+         </div>  
+        
+        
+          <div alight="left">
+            <tr>
+                <label class="form-label" >cours</label>
+                <td>
+                <select name="cours" id="cours" class="form-control">
+                <option
+                  th:text="*{cours}"> </option>
+                
+                <ol>
+                <li>>
+                <option 
+                        th:each="cours : ${listcours}"
+                        th:value="${cours.id}"
+                        th:text="${cours.nomcours}">
+                </option>
+                </li>
+                </ol>
+                </select>
+                </td>
+                </tr>
+                </div>
+                
+         <div align="left">
+          <tr>
+            <label class="form-label" >frais</label>
+            
+            <td>       
+            <input type="text" th:field="*{frais}" class="form-control" placeholder="fee" />
+            </td>
+            </tr>
+         </div>  
+ 
+<br>
+            <tr>
+            <td colspan="2"><button type="submit" class="btn btn-info">Enregistrer</button> </td>
+            </tr>
+ 
+    </form>
+</div>
+</body>
+</html>

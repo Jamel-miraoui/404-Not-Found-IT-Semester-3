@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Gestion des cours</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div align="center">
+    <h1>Ajouter nouveau cours</h1>
+    <br />
+     <div class="col-sm-4">
+    <form action="#" th:action="@{/Cours/enregistrer}" th:object="${cours}" method="post">
+ 
+      
+<div alight="left">
+            <tr>
+                <label class="form-label" >Nom Cours</label>
+                <td>
+                <input type="hidden" th:field="*{id}" />
+                <input type="text" th:field="*{nomcours}" class="form-control" placeholder="Cours Name" />
+                </td>
+            </tr>
+         </div>  
+        
+        
+          <div alight="left">
+            <tr>
+                <label class="form-label" >Duree</label>
+                
+                <td>
+                 <input type="text" th:field="*{duree}" class="form-control" placeholder="Duration" />
+                </td>
+            </tr>
+         </div>  
+ 
+<br>
+            <tr>
+            <td colspan="2"><button type="submit" class="btn btn-info">Enregistrer</button> </td>
+            </tr>
+ 
+    </form>
+</div>
+</body>
+</html>
