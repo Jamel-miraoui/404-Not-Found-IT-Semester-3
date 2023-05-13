@@ -4,15 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQLConnection {
+public class OracleConnection {
     private static Connection con;
-    public static final String URL = "jdbc:mysql://localhost:3307/tpjava";
-    public static final String USER = "root";
-    public static final String PASSWORD = "";
-    public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
+    public static final String URL = "jdbc:oracle:thin:@localhost:1521:ORCL";
+    public static final String USER = "system";
+    public static final String PASSWORD = "mr";
+    public static final String DRIVER_CLASS = "oracle.jdbc.driver.OracleDriver";
 
     // private constructor
-    private MySQLConnection() {
+    private OracleConnection() {
         try {
             Class.forName(DRIVER_CLASS);
         } catch (ClassNotFoundException e) {
@@ -32,10 +32,9 @@ public class MySQLConnection {
 
     public static Connection getConnection() {
         if (con == null) {
-            new MySQLConnection();
+            new OracleConnection();
             con = createConnection();
         }
         return con;
     }
 }
-
