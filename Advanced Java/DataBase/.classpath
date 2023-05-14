@@ -12,6 +12,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/jamel/OneDrive/Bureau/PL-KM/IsetSo/404-Not-Found-IT-Semester-4/Advanced Java/mysql-connector-java-5.1.6-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/jamel/OneDrive/Bureau/PL-KM/IsetSo/404-Not-Found-IT-Semester-4/Advanced Java/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jamel/OneDrive/Bureau/PL-KM/IsetSo/404-Not-Found-IT-Semester-4/Advanced Java/ojdbc11.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
