@@ -6,10 +6,10 @@ import java.sql.SQLException;
 public class TestConnection {
     public static void main(String[] args) {
         // Get a connection from MySQLConnection class
-        Connection connection = MySQLConnection.getConnection();
+        Connection connection = OracleConnection.getConnection();
 
         if (connection != null) {
-            System.out.println("Connected to MySQL database.");
+            System.out.println("Connected to Oracle database.");
             try {
                 // Close the connection
                 connection.close();

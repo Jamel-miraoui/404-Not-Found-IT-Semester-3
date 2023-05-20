@@ -54,5 +54,4 @@ public class Etudiant {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 }

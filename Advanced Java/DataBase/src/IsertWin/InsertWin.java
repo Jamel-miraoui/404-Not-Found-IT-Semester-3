@@ -48,7 +48,6 @@ public class InsertWin extends JFrame implements ActionListener {
 		pano.add(password);
 		pano.add(Insert);
 		pano.add(Cancel);
-
 		this.setContentPane(pano);
 		this.setSize(600, 300);
 		this.setTitle("test");
@@ -65,7 +64,9 @@ public class InsertWin extends JFrame implements ActionListener {
 			String text4 = password.getText().toString();
 			Etudiant etud = new Etudiant(text, text1, text2, text3, text4);
 			JOptionPane.showMessageDialog(null, etud.toString());
-			MySQLConnection b = new MySQLConnection();
+			EtudiantDAO c = new  EtudiantDAO();
+			c.insert(etud);
+			c.getAllEtudiant();
 		}
 
 		if (e.getSource() == Cancel) {
