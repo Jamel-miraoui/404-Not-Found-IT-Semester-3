@@ -3,7 +3,6 @@
 <head>
     <title>Edit User</title>
     <link rel="stylesheet" type="text/css" href="/css/edit.css">
-
 </head>
 <body>
     <h1>Edit User</h1>
@@ -16,6 +15,11 @@
         <label for="email">Email:</label>
         <input type="email" id="email" th:field="${user.email}" required><br>
         <input type="submit" value="Update">
+    </form>
+
+    <form method="get" th:action="@{/users/{id}/delete(id=${user.id})}">
+        <input type="hidden" th:field="${user.id}">
+        <input type="submit" value="Delete">
     </form>
 </body>
 </html>
