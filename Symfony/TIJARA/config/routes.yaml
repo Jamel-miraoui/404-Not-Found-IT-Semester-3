@@ -1,4 +1,0 @@
-# Default route
-app_login:
-  path: /
-  controller: App\Controller\HomeController::login
