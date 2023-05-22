@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="/css/search-results.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/users">Home</a></li>
+            <li><a href="/users/profile">Profile</a></li>
+        </ul>
+      
+        <div class="search-form">
+            <form action="/search" method="get">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    
+    <h1>Search Results</h1>
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.email}"></td>
+            <td>
+                <a th:href="@{/users/{id}/edit(id=${user.id})}">Edit</a> |
+                <a th:href="@{/users/{id}/delete(id=${user.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>
