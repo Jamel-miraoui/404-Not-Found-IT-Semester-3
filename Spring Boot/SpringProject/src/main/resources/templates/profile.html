@@ -1,4 +1,12 @@
-body {
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+	<style>
+		body {
   font-family: Arial, sans-serif;
   background-image: linear-gradient(243deg, rgba(126, 3, 173, 1) 43%, rgba(9, 193, 231, 1) 90%),
                    radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
@@ -85,7 +93,7 @@ a.delete-button {
 
 nav {
   background-color: #333;
-  padding: 20px; /* Adjust the padding value as desired */
+  padding: 10px; /* Adjust the padding value as desired */
   margin-bottom: 20px;
   border-radius: 10px;
   width: 100%;
@@ -110,7 +118,8 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 12px;
+  padding: 8px; /* Adjust the padding value as desired */
+  font-size: 14px; /* Adjust the font-size value as desired */
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
@@ -142,3 +151,21 @@ nav .search-form button {
 nav .search-form button:hover {
   background-color: #777;
 }
+
+		</style>
+	<nav>
+  <ul>
+    <li><a href="/users">Home</a></li>
+    <li><a href="/users/profile">Profile</a></li>
+  </ul>
+  
+  <div class="search-form">
+    <form action="/search" method="get">
+      <input type="text" name="query" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<h1>Profile</h1>
+</body>
+</html>

@@ -42,6 +42,7 @@ public class UserController {
         model.addAttribute("user", new User());
         return "create";
     }
+    
 
     @GetMapping("/{id}/edit")
     public String showEditForm(@PathVariable Long id, Model model) {
@@ -67,4 +68,13 @@ public class UserController {
         userRepository.deleteById(id);
         return "redirect:/users";
     }
+    
+    @GetMapping("/profile")
+    public String showProfile(Model model) {
+        // Add logic to retrieve profile information and pass it to the model
+        
+        return "profile"; // Assuming the view name is "profile.html"
+    }
+    
+
 }
