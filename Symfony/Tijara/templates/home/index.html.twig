@@ -1,0 +1,39 @@
+{% extends 'home/navBar.html.twig' %}
+
+{% block carousel %}{% endblock %}
+
+{% block content %}
+    <!-- products below the carousel -->
+    <h1 class="h1-home">Les tendances du moment</h1>
+    <div class="row">
+        {% for product in bestProducts %}
+            <div class="col-6 col-md-3">
+                <div class="product-item text-center">
+                    <a href="{{ path('product', {'slug':product.slug }) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="products-picture img-fluid img-thumbnail"></a>
+                    <p class="product-name">{{ product.name }}</p>
+                    <p class="product-price">{{ (product.price / 100) | number_format(2, ',', '.') }}€</p>
+                    {# divided by 100 because recorded in float #}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="home-btn-all-products">
+        <a href="/nos-produits" class=""><button class="button-design">Voir nos produits</button></a>
+    </div>
+
+    <!-- FEATURETTE -->
+    <div class="home-presentation">
+        <div class="col-md-6 img-large-container">
+            <img src="{{ asset('assets/pictures/home-img-large.png') }}" class="img-large img-fluid mx-auto " alt="image">
+        </div>
+        <div class="col-md-6">
+            <hr>
+            <p>
+                "Des produits pas forcément utiles, enfin, peut être, des fois un peu, ca dépend du moment,
+                après, est-ce vraiment différent de ce que l'on trouve ailleurs ? <br>Et puis c'est votre argent, alors pourquoi pas
+                se faire plaisir, on n'a qu'une vie après tout bordel."
+            </p>
+            <hr>
+        </div>
+    </div>
+{% endblock %}
